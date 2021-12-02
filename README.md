@@ -1,3 +1,7 @@
+## Creating Dev zip file
+
+cd vue-material/ && yarn build && cd .. && tar -czvf vue-material.tar.gz --exclude vue-material/.git vue-material/
+
 <p align="center">
   <a href="https://vuematerial.io/" target="_blank">
     <img width="150" src="https://vuematerial.io/assets/logo-color.png">

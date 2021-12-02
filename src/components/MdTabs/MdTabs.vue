@@ -73,9 +73,13 @@
       indicatorStyles: {},
       indicatorClass: null,
       noTransition: true,
-      containerStyles: {},
+      containerStyles: {
+        height: '100%',
+        //'overflow': 'hidden'
+      },
       contentStyles: {
-        height: '0px'
+        height: '100%',
+        'overflow': 'hidden'
       },
       hasContent: false,
       MdTabs: {
@@ -210,14 +214,10 @@
       },
       calculateTabPos () {
         if (this.hasContent) {
-          const tabElement = this.$el.querySelector(`.md-tab:nth-child(${this.activeTabIndex + 1})`)
+          //const tabElement = this.$el.querySelector(`.md-tab:nth-child(${this.activeTabIndex + 1})`)
 
-          this.contentStyles = {
-            height: tabElement ? `${tabElement.offsetHeight}px` : 0
-          }
-          this.containerStyles = {
-            transform: `translate3D(${this.mdIsRtl ? (this.activeTabIndex) * 100 : (-this.activeTabIndex) * 100}%, 0, 0)`
-          }
+
+          this.containerStyles.transform = `translate3D(${this.mdIsRtl ? (this.activeTabIndex) * 100 : (-this.activeTabIndex) * 100}%, 0, 0)`
         }
       },
       callResizeFunctions () {
